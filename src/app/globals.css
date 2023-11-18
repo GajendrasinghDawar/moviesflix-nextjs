@@ -2,26 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+@layer base {
+
+  html,
+  body {
+    @apply h-full;
+    @apply w-full;
+    @apply bg-red1;
+    @apply text-gray11;
+
+  }
+
+  h1 {
+    @apply text-4xl;
+    @apply text-red11;
+    @apply font-bold;
+
+  }
+
+  h2 {
+    @apply text-2xl;
+    @apply text-red11;
+    @apply font-bold;
+
+  }
+
+  a {
+    @apply text-blue11;
+    @apply underline;
+    @apply font-semibold;
+
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer utilities {
+  .hideScroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  .navbar {
+    background: radial-gradient(circle at 20% 40%, #feebec, #e5484d);
+  }
 }
