@@ -4,7 +4,7 @@ export const views = {
         endpoint: 'trending/movie/day',
         url: 'movies/trending',
     },
-    nowPlaying: {
+    now_playing: {
         title: 'Now playing',
         endpoint: 'movie/now_playing',
         url: 'movies/now_playing',

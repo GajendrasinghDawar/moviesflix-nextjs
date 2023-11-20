@@ -1,9 +1,15 @@
+import { redirect } from 'next/navigation'
+
 import { capitalize } from "lib/capitalize"
 import { ResultPage } from "components/ResultPage"
 import { getMovieData } from "lib/api"
 import { views } from "lib/view"
 
 export default async function MoviesViews({ params, searchParams }) {
+
+    // if (!(params.view[0] in views && params.view[1] == undefined)) {
+    //     redirect('/')
+    // }
 
     let view = views[params.view]
     let page = searchParams.page || 1
@@ -19,7 +25,7 @@ export default async function MoviesViews({ params, searchParams }) {
             <h1> {capitalize(params.view[0])}</h1>
             <div>
                 <ResultPage movies={results}
-                    next={nextPage ? `/movies/${view}?page=${nextPage}` : null} />
+                    nextPage={nextPage ? `/movies/${view}?page=${nextPage}` : null} />
             </div>
         </div>
     )

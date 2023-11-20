@@ -6,7 +6,7 @@ import { views } from 'lib/view'
 export default async function Home() {
 
   let { results: trending } = await getMovieData(views.trending.endpoint)
-  let { results: nowPlaying } = await getMovieData(views.nowPlaying.endpoint)
+  let { results: now_playing } = await getMovieData(views.now_playing.endpoint)
   let { results: upcoming } = await getMovieData(views.upcoming.endpoint)
 
   var featuredMovie = trending[0]
@@ -17,7 +17,7 @@ export default async function Home() {
       <Hero featuredMovie={featuredMovie} />
 
       <Carousel movies={trending} view={views.trending} />
-      <Carousel movies={nowPlaying} view={views.nowPlaying} />
+      <Carousel movies={now_playing} view={views.now_playing} />
       <Carousel movies={upcoming} view={views.upcoming} />
 
 
