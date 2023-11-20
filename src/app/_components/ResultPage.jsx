@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { getMedia } from "lib/api"
 
-export function ResultPage({ movies, nextPage }) {
+export function ResultPage({ movies }) {
   return (
     <div className=" mb-8 h-full grid gap-2 grid-cols-imageGrid ">
       {movies.map((movie) => (
@@ -19,7 +19,7 @@ export function ResultPage({ movies, nextPage }) {
           </div>
         </Link>
       ))}
-      <div>{nextPage}</div>
+      <div className="mb-7 w-36 h-8 bg-blue5"></div>
     </div>
   )
 }

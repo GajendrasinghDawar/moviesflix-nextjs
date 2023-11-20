@@ -1,34 +1,27 @@
-import { redirect } from 'next/navigation'
-
 import { capitalize } from "lib/capitalize"
-import { ResultPage } from "components/ResultPage"
-import { getMovieData } from "lib/api"
 import { views } from "lib/view"
+import { InfiniteScrollMovies } from "components/InfiniteScrollMovies"
+import { fetchMovies } from "lib/actions"
+
 
 export default async function MoviesViews({ params, searchParams }) {
-
-    // if (!(params.view[0] in views && params.view[1] == undefined)) {
-    //     redirect('/')
-    // }
 
     let view = views[params.view]
     let page = searchParams.page || 1
 
-    let { results, total_pages } = await getMovieData(view.endpoint, {
-        page
-    })
-
-    let nextPage = parseInt(page) < total_pages ? parseInt(page) + 1 : null
+    let { results } = await fetchMovies(view.endpoint, page)
 
     return (
         <Container>
-            <div> <h1> {capitalize(params.view[0])}</h1></div>
-            <div className='overflow-auto'>
-                <ResultPage
-                    movies={results}
-                    nextPage={nextPage ? `/movies/${view}?page=${nextPage}` : null}
-                />
+            <div>
+                <h1>
+                    {capitalize(params.view[0])}
+                </h1>
             </div>
+            <InfiniteScrollMovies
+                initialMovies={results}
+                endpoint={view.endpoint}
+            />
         </Container>
 
     )

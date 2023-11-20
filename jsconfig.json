@@ -9,6 +9,9 @@
       ],
       "lib/*": [
         "./src/app/_lib/*"
+      ],
+      "hooks/*": [
+        "./src/app/_hooks/*"
       ]
     }
   }
