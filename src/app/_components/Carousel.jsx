@@ -11,17 +11,16 @@ export async function Carousel({ movies, view }) {
       <div className="flex overflow-y-hidden  snap-x overflow-x-scroll  gap-1  snap-mandatory scroll-pl-10 py-1 mb-2">
         {movies.map((movie) => {
           return (
-            <Link
-              key={movie.title}
-              href={"#"}
-              className="min-h-[200px]  max-h-[150px] min-w-[150px] max-w-[150px] block relative snap-center"
-            >
-              <Image
-                src={getMedia(movie.poster_path, "w300")}
-                alt={movie.title}
-                fill
-                className={` object-fill `}
-              />
+            <Link key={movie.title} href={"#"}>
+              <div className="min-h-[200px]  max-h-[150px] min-w-[150px] max-w-[150px] block relative snap-center">
+                <Image
+                  src={getMedia(movie.poster_path, "w300")}
+                  alt={movie.title}
+                  fill
+                  sizes="100%"
+                  className={` object-fill `}
+                />
+              </div>
             </Link>
           )
         })}

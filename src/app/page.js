@@ -12,15 +12,24 @@ export default async function Home() {
   var featuredMovie = trending[0]
 
   return (
-    <main className='md:w-9/12 w-full flex flex-col gap-2'>
+    <Container>
+      <main className='flex flex-col gap-2'>
+        <Hero featuredMovie={featuredMovie} />
+        <Carousel movies={trending} view={views.trending} />
+        <Carousel movies={now_playing} view={views.now_playing} />
+        <Carousel movies={upcoming} view={views.upcoming} />
+      </main>
+    </Container>
 
-      <Hero featuredMovie={featuredMovie} />
-
-      <Carousel movies={trending} view={views.trending} />
-      <Carousel movies={now_playing} view={views.now_playing} />
-      <Carousel movies={upcoming} view={views.upcoming} />
-
-
-    </main>
   )
 }
+function Container({ children }) {
+  return (
+    <div className='flex-1 md:flex md:justify-center px-2 md:px-0 h-0'>
+      <div className="md:w-9/12 w-full px-2 md:px-0">{children}</div>
+    </div>
+  )
+}
+
+
+

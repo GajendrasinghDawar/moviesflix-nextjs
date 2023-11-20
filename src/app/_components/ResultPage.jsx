@@ -4,10 +4,10 @@ import { getMedia } from "lib/api"
 
 export function ResultPage({ movies, nextPage }) {
   return (
-    <div className="mb-8 grid gap-2 grid-cols-imageGrid">
+    <div className=" mb-8 h-full grid gap-2 grid-cols-imageGrid ">
       {movies.map((movie) => (
         <Link href={""} key={movie.id}>
-          <div className=" h-[250px] relative ">
+          <div className=" h-[250px] max-h-[250px] relative ">
             <Image
               src={getMedia(movie.poster_path, "w342")}
               alt={movie.title}

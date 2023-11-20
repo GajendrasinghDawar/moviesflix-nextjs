@@ -21,12 +21,23 @@ export default async function MoviesViews({ params, searchParams }) {
     let nextPage = parseInt(page) < total_pages ? parseInt(page) + 1 : null
 
     return (
-        <div className='md:max-w-9/12 md:w-9/12 h-full flex flex-col gap-2 '>
-            <h1> {capitalize(params.view[0])}</h1>
-            <div>
-                <ResultPage movies={results}
-                    nextPage={nextPage ? `/movies/${view}?page=${nextPage}` : null} />
+        <Container>
+            <div> <h1> {capitalize(params.view[0])}</h1></div>
+            <div className='overflow-auto'>
+                <ResultPage
+                    movies={results}
+                    nextPage={nextPage ? `/movies/${view}?page=${nextPage}` : null}
+                />
             </div>
-        </div>
+        </Container>
+
     )
-} 
+}
+
+function Container({ children }) {
+    return (
+        <main className='flex-1 ml-auto mr-auto border  h-0 overflow-y-auto md:w-9/12  flex flex-col w-full px-2 md:px-0 '>
+            {children}
+        </main>
+    )
+}
