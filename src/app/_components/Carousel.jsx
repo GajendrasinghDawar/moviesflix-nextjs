@@ -12,7 +12,7 @@ export async function Carousel({ movies, view }) {
         {movies.map((movie) => {
           return (
             <Link key={movie.title} href={"#"}>
-              <div className="min-h-[200px]  max-h-[150px] min-w-[150px] max-w-[150px] block relative snap-center">
+              <div className="min-h-[200px]  max-h-[150px] min-w-[150px] max-w-[150px] block relative snap-center rounded-md overflow-hidden">
                 <Image
                   src={getMedia(movie.poster_path, "w300")}
                   alt={movie.title}

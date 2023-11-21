@@ -1,19 +1,23 @@
 import { capitalize } from "lib/capitalize"
 import { views } from "lib/view"
 import { InfiniteScrollMovies } from "components/InfiniteScrollMovies"
-import { fetchMovies } from "lib/actions"
-
+import { getMovieData } from "lib/api"
 
 export default async function MoviesViews({ params, searchParams }) {
 
     let view = views[params.view]
     let page = searchParams.page || 1
 
-    let { results } = await fetchMovies(view.endpoint, page)
+    let { results, total_pages } = await getMovieData(view.endpoint,
+        {
+            page
+        }
+    )
 
     return (
         <Container>
-            <div>
+            <div className="mt-4
+            mb-3">
                 <h1>
                     {capitalize(params.view[0])}
                 </h1>
@@ -21,6 +25,7 @@ export default async function MoviesViews({ params, searchParams }) {
             <InfiniteScrollMovies
                 initialMovies={results}
                 endpoint={view.endpoint}
+                total_pages={total_pages}
             />
         </Container>
 
@@ -29,7 +34,7 @@ export default async function MoviesViews({ params, searchParams }) {
 
 function Container({ children }) {
     return (
-        <main className='flex-1 ml-auto mr-auto border  h-0 overflow-y-auto md:w-9/12  flex flex-col w-full px-2 md:px-0 '>
+        <main className='flex-1 ml-auto mr-auto   h-0 overflow-y-auto md:w-9/12  flex flex-col w-full px-2 md:px-0 '>
             {children}
         </main>
     )

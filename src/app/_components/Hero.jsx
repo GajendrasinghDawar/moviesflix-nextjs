@@ -31,7 +31,7 @@ export async function Hero({ featuredMovie }) {
         style={{
           aspectRatio: backdrop.aspect_ratio,
         }}
-        className="w-full h-auto "
+        className="w-full h-auto rounded-md "
       />
     </div>
   )

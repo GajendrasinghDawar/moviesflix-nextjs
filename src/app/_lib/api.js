@@ -13,6 +13,8 @@ export async function getMovieData(endpoint, queryParams = {}) {
     const response = await fetch(url, options)
 
     if (!response.ok) {
+        const data = await response.json()
+        console.log(data)
         throw Error(response.status)
     }
     const data = await response.json()
