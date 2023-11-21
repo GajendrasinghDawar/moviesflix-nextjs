@@ -1,7 +1,7 @@
 export function Footer() {
   return (
     <Container>
-      <footer className="flex  items-center">
+      <footer className="flex min-h-full items-center ">
         <div>apis provided by the movieDB</div>
       </footer>
     </Container>

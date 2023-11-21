@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState, startTransition } from "react"
 import { useInView } from "hooks/useInView"
 import { fetchMovies } from "lib/actions"
 
@@ -21,9 +21,12 @@ export function InfiniteScrollMovies({
   async function loadMoreMovies() {
     const nextPage = page < total_pages ? page + 1 : null
     const { results } = await fetchMovies(`${endpoint}`, nextPage)
-    setPage(nextPage)
-    setMovies((prev) => {
-      return [...prev, ...results]
+
+    startTransition(() => {
+      setPage(nextPage)
+      setMovies((prev) => {
+        return [...prev, ...results]
+      })
     })
   }
 

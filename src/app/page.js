@@ -25,7 +25,7 @@ export default async function Home() {
 }
 function Container({ children }) {
   return (
-    <div className='flex-1 md:flex md:justify-center px-2 md:px-0 h-0'>
+    <div className='flex-1 md:flex md:justify-center px-2 md:px-0 h-0 overflow-y-auto'>
       <div className="md:w-9/12 w-full px-2 md:px-0">{children}</div>
     </div>
   )

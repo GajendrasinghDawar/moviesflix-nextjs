@@ -12,7 +12,7 @@ export function Navbar() {
           Moviesflix
         </Link>
         <ul className="ml-auto flex gap-2">
-          <li>search</li>
+          <Link href={"/search"}>search</Link>
           <li>watchlist</li>
           <li>login</li>
         </ul>

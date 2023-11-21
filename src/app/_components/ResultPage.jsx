@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { getMedia } from "lib/api"
 
-export function ResultPage({ movies, targetRef }) {
+export function ResultPage({ movies, targetRef = undefined }) {
   return (
     <div className=" mb-8 h-full grid gap-2 grid-cols-imageGrid ">
       {movies.map((movie) => (
@@ -19,12 +19,14 @@ export function ResultPage({ movies, targetRef }) {
           </div>
         </Link>
       ))}
-      <div
-        className="mb-7 w-36 h-36 bg-blue5 text-center rounded-md grid place-content-center"
-        ref={targetRef}
-      >
-        <p className="font-bold text-sm">Loading More Data</p>
-      </div>
+      {targetRef && (
+        <div
+          className="mb-7 w-36 h-36 bg-blue5 text-center rounded-md grid place-content-center"
+          ref={targetRef}
+        >
+          <p className="font-bold text-sm">Loading More Data</p>
+        </div>
+      )}
     </div>
   )
 }

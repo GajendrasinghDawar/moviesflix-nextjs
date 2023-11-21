@@ -18,7 +18,7 @@
   h1 {
     @apply text-4xl;
     @apply text-red11;
-    @apply font-bold;
+    @apply font-extrabold;
 
   }
 
