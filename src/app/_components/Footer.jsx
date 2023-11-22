@@ -3,7 +3,7 @@ export function Footer() {
     <Container>
       <footer className="flex h-full items-center justify-center w-full">
         <div className="h-content ">
-          <p>
+          <p className="font-semibold">
             Data provided by{" "}
             <a href="https://www.themoviedb.org/" target="_blank">
               <MovieDBIcon />

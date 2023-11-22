@@ -2,14 +2,10 @@
 
 const {
   gray,
-  grayDark,
   blue,
-  blueDark,
   red,
-  redDark,
   green,
-  mauve,
-  mauveDark } = require('@radix-ui/colors');
+  mauve } = require('@radix-ui/colors');
 
 
 module.exports = {
