@@ -8,6 +8,17 @@ export default async function Page({ params, }) {
     let movie = await getMovieData(`movie/${params.id}`, {
         append_to_response: "images,videos,recommendations,",
     })
+
+    if (movie.videos.results.length == 0) {
+        return (
+            <Container>
+                <div className="grid place-content-center h-full">
+                    <h1>Movie not found</h1>
+                </div>
+            </Container>
+        )
+    }
+
     const trailer = movie.videos.results.find((video) => {
         return (
 
@@ -15,6 +26,7 @@ export default async function Page({ params, }) {
             (video.type === 'Trailer' || video.type === 'Teaser')
         );
     });
+
     let recommendations = movie.recommendations.results
     return (
         <Container>
