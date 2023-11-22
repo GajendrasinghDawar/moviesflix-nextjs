@@ -14,7 +14,7 @@ export default async function SearchPage({ searchParams }) {
   return (
     <Container>
       <div className="flex flex-col gap-2 h-full">
-        <div className="ml-auto mr-auto sm:ml-0 md:ml:0 md:mr-0 sm:mr-0 flex flex-col sm:flex-row md:flex-row sm:justify-between md:justify-between lg:justify-between">
+        <div className="ml-auto mr-auto sm:ml-0 md:ml:0 md:mr-0 sm:mr-0 flex flex-col sm:flex-row md:flex-row sm:justify-between md:justify-between lg:justify-between sm:items-center">
           <div>
             <h1>Search page</h1>
           </div>

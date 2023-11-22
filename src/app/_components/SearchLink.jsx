@@ -4,10 +4,10 @@ export function SearchLink() {
   return (
     <Link
       href={"/search"}
-      className="ml-auto  gap-2  no-underline border flex items-center justify-center px-2 py-1 rounded-md cursor-pointer select-none hover:bg-red4 border-none h-[28px] mt-[3px] md:h-full"
+      className="ml-auto  gap-2  no-underline border flex items-center justify-center px-2 py-1 rounded-md cursor-pointer select-none bg-red4 hover:bg-red3 border-none h-[28px] mt-[3px] md:h-full"
     >
       <SearchIcon />
-      <p className="h-6">search</p>
+      <p className="text-blue11 font-bold">search</p>
     </Link>
   )
 }

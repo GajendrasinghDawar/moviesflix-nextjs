@@ -9,7 +9,7 @@ export async function MovieHero({ featuredMovie, title = undefined }) {
   let logo = images.logos.find((logo) => logo.iso_639_1 == "en")
 
   return (
-    <div className="w-full relative my-2 flex-1">
+    <div className="relative">
       {logo && (
         <Image
           src={getMedia(logo.file_path)}
@@ -25,8 +25,8 @@ export async function MovieHero({ featuredMovie, title = undefined }) {
       )}
       <Image
         src={getMedia(backdrop.file_path)}
-        width={1000}
-        height={1000}
+        width={300}
+        height={200}
         alt="hero image"
         priority
         style={{

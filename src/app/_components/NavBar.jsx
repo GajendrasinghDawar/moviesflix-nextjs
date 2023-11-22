@@ -4,10 +4,10 @@ import { SearchLink } from "./SearchLink"
 export function Navbar() {
   return (
     <Container>
-      <nav className="flex items-center min-h-full w-full">
+      <nav className="flex items-center min-h-full w-full px-2 ">
         <Link
           href={"/"}
-          className={`text-red11 font-extrabold italic no-underline text-xl md:text-3xl drop-shadow ${logoFont.className} cursor-pointer select-none block h-full`}
+          className={`text-red11  -mx-2  font-extrabold italic no-underline text-xl md:text-3xl drop-shadow ${logoFont.className} cursor-pointer select-none block h-full`}
         >
           Moviesflix
         </Link>

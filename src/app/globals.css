@@ -15,45 +15,37 @@
   }
 
   h1 {
-    @apply text-4xl;
+    @apply text-2xl;
     @apply text-red11;
     @apply font-extrabold;
+    @apply leading-7;
 
   }
 
   h2 {
-    @apply text-2xl;
+    @apply text-xl;
     @apply text-red11;
     @apply font-bold;
+    @apply leading-7;
+  }
 
+  h3 {
+    @apply text-base;
+    @apply text-red11;
+    @apply font-semibold;
+    @apply leading-7
+  }
+
+  p {
+    @apply leading-6;
+    @apply text-gray11;
+    @apply text-sm;
   }
 
   a {
     @apply text-blue11;
     @apply underline;
     @apply font-semibold;
-
-  }
-
-  iframe {
-    aspect-ratio: 16 / 9;
-    width: 100%;
-  }
-
-  dt,
-  dd {
-    line-height: 1;
-  }
-
-  dt {
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    top: 0.2rem;
-    opacity: 0.8;
-  }
-
-  dd {
-    margin: 0;
   }
 }
 
