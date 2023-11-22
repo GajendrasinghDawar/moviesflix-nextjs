@@ -14,7 +14,6 @@ export async function getMovieData(endpoint, queryParams = {}) {
 
     if (!response.ok) {
         const data = await response.json()
-        console.log(data)
         throw Error(response.status)
     }
     const data = await response.json()
@@ -24,7 +23,6 @@ export async function getMovieData(endpoint, queryParams = {}) {
 export function getMedia(file_path, file_size = 'original',) {
     const url = `${apiImgUrl}/${file_size}${file_path}`
     return url
-
 }
 
 export async function getImageBackDrops(movieID) {

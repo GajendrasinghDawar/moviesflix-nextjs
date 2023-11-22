@@ -20,7 +20,7 @@ export function SearchInput() {
   }, 300)
 
   return (
-    <div className="flex">
+    <div className="flex mt-2 sm:mt-0 md:mt-0">
       <input
         className="bg-red3 hover:bg-red4 text-red12 border border-red7 hover:border-red8 rounded-md p-2 my-2 focus:outline-none"
         placeholder="search movie"

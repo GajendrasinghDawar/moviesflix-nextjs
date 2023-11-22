@@ -37,7 +37,10 @@ export function InfiniteScrollMovies({
   }, [isOnScreen])
 
   return (
-    <div className="overflow-auto" ref={rootRef}>
+    <div
+      className="overflow-auto relative shadow-inner py-2 rounded"
+      ref={rootRef}
+    >
       <ResultPage movies={movies} targetRef={targetRef} />
     </div>
   )

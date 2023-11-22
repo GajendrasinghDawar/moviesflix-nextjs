@@ -17,8 +17,8 @@ export default async function MoviesViews({ params, searchParams }) {
     return (
         <Container>
             <div className="mt-4
-            mb-3">
-                <h1>
+            mb-3  w-full">
+                <h1 className="w-full">
                     {capitalize(params.view[0])}
                 </h1>
             </div>

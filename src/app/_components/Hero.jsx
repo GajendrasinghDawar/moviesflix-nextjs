@@ -18,7 +18,7 @@ export async function Hero({ featuredMovie }) {
         alt="logo image"
         priority
         style={{
-          logo: logo.aspect_ratio,
+          aspectRatio: logo.aspect_ratio,
         }}
         className={`w-36 md:w-96 h-auto object-contain absolute top-1/2 left-2 drop-shadow-2xl`}
       />
